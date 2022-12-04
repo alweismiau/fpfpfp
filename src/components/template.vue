@@ -1,54 +1,157 @@
 
-<template>
 
-	<div class="section">
-		<div class="container">
-			<div class="row full-height justify-content-center">
-				<div class="col-12 text-center align-self-center py-5">
-					<div class="section pb-5 pt-5 pt-sm-2 text-center">
-			          	<label for="reg-log"></label>
-						<div class="card-3d-wrap mx-auto">
-							<div class="card-3d-wrapper">
-								<div class="card-front">
-									<div class="center-wrap">
-										<div class="section text-center">
-											<h4 class="mb-4 pb-3">Log In</h4>
-											<div class="form-group">
-												<input type="email" name="email" class="form-style" placeholder="Your Email" id="email" required="">
-												<i class="input-icon uil uil-at"></i>
-											</div>	
-											<div class="form-group mt-2">
-												<input type="password" name="pass" class="form-style" placeholder="Your Password" id="pass" required="">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
-											<a href="#" class="btn mt-4">submit</a>
-                            				</div>
-			      					</div>
-			      				</div>
-			      			</div>
-			      		</div>
-			      	</div>
-		      	</div>
-	      	</div>
-	    </div>
-	</div>
-  </template>
-  
-  <script>
-  export default {
-  };
-  </script>
-  
-  <style>
-  @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
+<template>
+  <a href="https://front.codes/" class="logo" target="_blank"> </a>
+
+  <div class="section">
+    <div class="container">
+      <div class="row full-height justify-content-center">
+        <div class="col-12 text-center align-self-center py-5">
+          <div class="section pb-5 pt-5 pt-sm-2 text-center">
+            <h6 class="mb-0 pb-3"><span>Log In </span><span>Sign Up</span></h6>
+            <input
+              class="checkbox"
+              type="checkbox"
+              id="reg-log"
+              name="reg-log"
+            />
+            <label for="reg-log"></label>
+            <div class="card-3d-wrap mx-auto">
+              <div class="card-3d-wrapper">
+                <div class="card-front">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-4 pb-3">Log In</h4>
+                      <div @submit.prevent="login">
+                        <div class="form-group">
+                          <input
+                            v-model="email"
+                            type="email"
+                            name="logemail"
+                            class="form-style"
+                            placeholder="Your Email"
+                            id="logemail"
+                            autocomplete="off"
+                          />
+                          <i class="input-icon uil uil-at"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input
+                            v-model="password"
+                            type="password"
+                            name="logpass"
+                            class="form-style"
+                            placeholder="Your Password"
+                            id="logpass"
+                            autocomplete="off"
+                          />
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <a href="#" class="btn mt-4" type="submit">submit</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-back">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-4 pb-3">Sign Up</h4>
+                      <div @submit.prevent="handleSubmit">
+                        <div class="form-group mt-2">
+                          <input
+                            v-model="email"
+                            type="email"
+                            name="logemail"
+                            class="form-style"
+                            placeholder="Your Email"
+                            id="logemail"
+                            autocomplete="off"
+                          />
+                          <i class="input-icon uil uil-at"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input
+                            v-model="password"
+                            type="password"
+                            name="logpass"
+                            class="form-style"
+                            placeholder="Your Password"
+                            id="logpass"
+                            autocomplete="off"
+                          />
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <a href="#" class="btn mt-4" type="submit">submit</a>
+                      </div>
+                    </div>
+                    <div v-if="isSuccess != null">
+                      <h1 v-if="isSuccess === true">Berhasil Mendaftar</h1>
+                      <h1 v-if="isSuccess === false">Gagal Mendaftar</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+// import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+
+export default {
+  //   name: ["Login", "Register",],
+
+  // data: () => ({
+  //   email: "",
+  //   password: "",
+  //   token: undefined,
+  // }),
+
+  // methods: {
+  //   login() {
+  //     const auth = getAuth();
+  //     signInWithEmailAndPassword(auth, this.email, this.password)
+  //       .then((a) => {
+  //         alert("Successfully logged in");
+  //         console.log(a);
+  //         this.$router.push("/dashboard");
+  //       })
+  //       .catch((error) => {
+  //         alert(error.message);
+  //       });
+  //   },
+  //   async handleSubmit() {
+  //     const auth = getAuth();
+  //     createUserWithEmailAndPassword(auth, this.email, this.password)
+  //       .then((userCredential) => {
+  //         alert("Successfully registered! Please login.");
+  //         this.token = userCredential._tokenResponse;
+  //         this.$router.push("/login");
+  //       })
+  //       .catch((error) => {
+  //         alert(error.message);
+  //       });
+  //   },
+  // },
+};
+</script>
+
+<style>
+/* Please ❤ this if you like it! */
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
 
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 15px;
   line-height: 1.7;
-  color: #c4c3ca;
-  background-color: #1f2029;
+  color: #e2eee2;
+  background-color: #8cb68c;
   overflow-x: hidden;
 }
 a {
@@ -324,5 +427,4 @@ h6 span {
   width: auto;
   display: block;
 }
-  </style>
-  
+</style>
