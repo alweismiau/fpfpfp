@@ -52,10 +52,10 @@ export default {
     return {
       App,
     }
-  //   const login = () => {
-  //       router.push({ name: "dashboard"});
-  //     };
-  //     return { login };
+    // const login = (useRouter) => {
+    //     router.push({ name: "dashboard"});
+    //   };
+    //   return { login };
   },
   created() {
   }

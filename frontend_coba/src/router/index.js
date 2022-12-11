@@ -3,6 +3,7 @@ import Home from "../components/Home.vue";
 import Login from "../components/Login.vue";
 import Register from "../components/Register.vue";
 import Dashboard from "../components/Dashboard.vue";
+import Coba from "../components/Coba.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: "/dashboard",
       name: "dashboard",
       component: Dashboard,
+    },
+    {
+      path: "/coba",
+      name: "coba",
+      component: Coba,
     },
   ],
 });

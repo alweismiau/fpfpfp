@@ -46,12 +46,18 @@ export const useApp = defineStore({
               icon: 'success',
               timer: 1500,
               showConfirmButton: false,
-            });
+            })
+            
+      //       .then((a) => {
+      //   alert("Successfully logged in");
+      //   console.log(a);
+      //   this.$router.push("/dashboard");
+      // });
           }
         }, (error) => {
           Swal.fire({
             title: 'Error!',
-            text: `Seems like there is an error while adding user ${user.email}<br>${error}`,
+            text: `Seems like there is an error while adding user ${user.email} ${error}`,
             icon: 'error',
             timer: 1500,
             showConfirmButton: false,
@@ -67,6 +73,7 @@ export const useApp = defineStore({
         })
         .then((response) => {
           if(response.status) {
+            this.router.push("/dashboard");
             Swal.fire({
               title: 'Success!',
               text: `Succesesfully added login ${user.password}`,

@@ -9,12 +9,15 @@ import Home from "./components/Home.vue";
 import Login from "./components/Login.vue";
 import Register from "./components/Register.vue";
 import Dashboard from "./components/Dashboard.vue";
+import Coba from "./components/Coba.vue";
+
 export default {
   components: {
     Home,
     Login,
     Register,
     Dashboard,
+    Coba,
   },
 };
 </script>
